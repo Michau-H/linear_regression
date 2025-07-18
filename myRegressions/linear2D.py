@@ -41,6 +41,8 @@ class LinearRegression2D:
         return m, b
     
     def _scale(self, X, y):
+        X = np.array(X)
+        y = np.array(y)
         self.x_min, self.x_max = X.min(), X.max()
         self.y_min, self.y_max = y.min(), y.max()
         X_scaled = (X - self.x_min) / (self.x_max - self.x_min)
@@ -48,7 +50,8 @@ class LinearRegression2D:
         return X_scaled, y_scaled
     
     def fit(self, X, y):
-        X = X.flatten()
+        X = np.array(X)
+        y = np.array(y)
         Xs, ys = self._scale(X, y)
         
         m_scaled = (ys[-1] - ys[0])/(Xs[-1] -Xs[0])
@@ -69,7 +72,7 @@ class LinearRegression2D:
                 if i > 0 and abs(loss_current - loss_last)/loss_last < self.tol:
                     counter += 1
                     if counter >= self.patience:
-                        print(f"Early stopping on {i} epoch, no improvement in {self.patience} epochs.")
+                        # print(f"Early stopping on {i} epoch, no improvement in {self.patience} epochs.")
                         break
                 else:
                     counter = 0
@@ -117,9 +120,11 @@ class LinearRegression2D:
         return FitResult(slope=self.m, intercept=self.b, stderr=m_err, intercept_stderr=b_err, rvalue=self.rvalue)
 
     def predict(self, X):
-        return self.m * X.flatten() + self.b
+        return self.m * X + self.b
     
     def _calculate_std_errors(self, X, y):
+        X = np.array(X)
+        y = np.array(y)
         y_pred = self.predict(X)
         residuals = y - y_pred
         n = len(X)
@@ -134,13 +139,16 @@ class LinearRegression2D:
         return self.SE_m, self.SE_b
 
     def r_value(self, X, y):
+        X = np.array(X)
+        y = np.array(y)
         y_pred = self.predict(X)
         correlation_matrix = np.corrcoef(y, y_pred)
         r = correlation_matrix[0, 1]
         return r
     
     def plot_regression(self, X, y):
-        X = X.flatten()
+        X = np.array(X)
+        y = np.array(y)
         x_vals = np.linspace(X.min(), X.max(), 1000)
         y_vals = self.predict(x_vals)
 
