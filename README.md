@@ -83,6 +83,21 @@ cd linear_regression
 cd myRegressions
 pip install -e .
 ```
+---
+
+## ⚙️ Requirements
+
+This project requires the following Python packages:
+
+- **Python 3.7+**  
+- **NumPy** — for numerical computations  
+- **Matplotlib** — for plotting results  
+
+You can install the required packages using pip:
+
+```bash
+pip install numpy matplotlib
+```
 
 ---
 
