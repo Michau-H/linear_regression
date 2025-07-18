@@ -1,0 +1,1 @@
+from .linear2D import LinearRegression2D
