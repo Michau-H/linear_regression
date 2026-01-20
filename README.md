@@ -1,4 +1,4 @@
-# 📈 myRegressions
+# myRegressions
 
 Are you bored with `scipy.stats.linregress`? Why not use another function for linear regression? This is an alternative.   
 
@@ -16,7 +16,7 @@ Are you bored with `scipy.stats.linregress`? Why not use another function for li
 
 Prepared to handle 2 dim data. Included option for stochastic gradient descent in case of big amount of data (suggested to use when `len(x) > 100 000`, works best with `batch_size = 1000` or `10000`).
 
-## 📦 Parameters
+## Parameters
 
 | Parametr        | Description                                | Default   |
 | ------------    | ------------------------------------------ | --------- |
@@ -30,7 +30,7 @@ Prepared to handle 2 dim data. Included option for stochastic gradient descent i
 
 ---
 
-## 📤 Returned results
+## Returned results
 
 | Attribute          | Description                                                   |
 | ------------------ | ------------------------------------------------------------- |
@@ -43,7 +43,7 @@ Prepared to handle 2 dim data. Included option for stochastic gradient descent i
 ---
 
 
-## 🧠 Methods
+## Methods
 
 | Method                 | Decription                                 | Return    |
 | ------------           | ------------------------------------------ | --------- |
@@ -56,7 +56,7 @@ Prepared to handle 2 dim data. Included option for stochastic gradient descent i
 
 ---
 
-## 📌 Example usage
+## Example usage
 example included in file `example.py`
 ```python
 from myRegressions import LinearRegression2D
@@ -73,7 +73,7 @@ print("R value (Pearson correlation):", results.r_value)
 ---
 ---
 
-## 🔧 Download
+## Download
 
 Download localy:
 
@@ -85,7 +85,7 @@ pip install -e .
 ```
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 This project requires the following Python packages:
 
@@ -101,5 +101,5 @@ pip install numpy matplotlib
 
 ---
 
-### 📝 License
+### License
 MIT License © 2025 Michau-H
